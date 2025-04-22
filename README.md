@@ -1,2 +1,10 @@
 # quizlog
-This is a system so that AI can run the script via input.
+
+
+
+
+## Input sequence recording.
+Given a python script with lots if input(), the quizlog 
+
+
+## Random seed managing.
