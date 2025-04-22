@@ -2,6 +2,19 @@
 
 ## Purpose
 
+The whole project is quizlog.py
+
+## Usage
+
+with 2 argument, answer a question in a questionare
+```
+quizlog.py record.yaml answer
+```
+or with 1 argument, just show the questionare until current status
+```
+quizlog.py record.yaml
+```
+
 The `quizlog` is a sandbox that trace format defines a minimal, reproducible, and verifiable structure to represent the progress of AI agents executing a multi-step Python script. It is designed to allow stepwise interaction, resumption, auditing, and replay of reasoning processes under deterministic conditions.
 
 ## Key Concepts
@@ -22,6 +35,7 @@ The following is an example of `record.yaml`
   "code_hash": "abc123def456...",  // Optional but recommended
   "inputs": ["2", "4", "YES", "[[1,0],[0,1]]"],
   "pointer": 4,
+  "print": ["message1","message2"], //record the printed messagess.
   "last_error": {
     "message": "UUᵀ ≠ A",
     "line": 12,
@@ -36,6 +50,7 @@ The following is an example of `record.yaml`
 - \`\` *(str, optional)*: Hash of the Python script to verify trace compatibility.
 - \`\` *(list of str)*: AI-provided answers in order. These are injected sequentially into the script via monkey-patched `input()`.
 - \`\` *(int)*: The index of the next unanswered `input()` call. Execution is resumed from here.
+- \`\` "print" field just record what the system printed while executing the thing. Alghough one can recover it from run the script again, but it is good to have some record.
 - \`\` *(object, optional)*:
   - `message`: The message passed to `raise Exception`, if applicable.
   - `line`: The script line number where the error occurred.
