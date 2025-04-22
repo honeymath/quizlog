@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The `quizlog` trace format defines a minimal, reproducible, and verifiable structure to represent the progress of AI agents executing a multi-step Python script. It is designed to allow stepwise interaction, resumption, auditing, and replay of reasoning processes under deterministic conditions.
+The `quizlog` is a sandbox that trace format defines a minimal, reproducible, and verifiable structure to represent the progress of AI agents executing a multi-step Python script. It is designed to allow stepwise interaction, resumption, auditing, and replay of reasoning processes under deterministic conditions.
 
 ## Key Concepts
 
@@ -15,6 +15,7 @@ The `quizlog` trace format defines a minimal, reproducible, and verifiable struc
 ```json record.json
 {
   "script":"example.py"
+  "output":"logfile.yaml"
   "seed": 123456,
   "code_hash": "abc123def456...",  // Optional but recommended
   "inputs": ["2", "4", "YES", "[[1,0],[0,1]]"],
@@ -37,6 +38,8 @@ The `quizlog` trace format defines a minimal, reproducible, and verifiable struc
   - `message`: The message passed to `raise Exception`, if applicable.
   - `line`: The script line number where the error occurred.
   - `score`: Partial score assigned before the error, if available.
+ 
+- \`\` OUTPUT: the file that receives the returning value
 
 ## Status Inference (no explicit `status` field)
 
