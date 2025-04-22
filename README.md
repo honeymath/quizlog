@@ -12,8 +12,9 @@ The `quizlog` trace format defines a minimal, reproducible, and verifiable struc
 
 ## Data Structure
 
-```json
+```json record.json
 {
+  "script":"example.py"
   "seed": 123456,
   "code_hash": "abc123def456...",  // Optional but recommended
   "inputs": ["2", "4", "YES", "[[1,0],[0,1]]"],
@@ -63,6 +64,13 @@ POST /quizlog/next
   "script_id": "example_001",
   "seed": 123456,
   "inputs": ["2", "4"]
+}
+```
+Or
+```json
+{
+  "sheet_id":"record.json"
+  "input":"super"
 }
 ```
 
