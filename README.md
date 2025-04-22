@@ -73,6 +73,7 @@ Or
   "input":"super"
 }
 ```
+The input can be None, if None, the program only shows up the status until the current input series. (until pointer)
 
 ```json
 Response
