@@ -12,6 +12,8 @@ The `quizlog` is a sandbox that trace format defines a minimal, reproducible, an
 
 ## Data Structure
 
+The following is an example of `record.yaml`
+
 ```json record.json
 {
   "script":"example.py"
